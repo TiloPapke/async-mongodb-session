@@ -27,7 +27,9 @@ async-std-runtime = ["mongodb/async-std-runtime"]
 tokio-runtime = ["mongodb/tokio-runtime"]
 
 [dependencies]
-async-session = "3"
+#async-session = "3"
+# using a version without chrono crate
+async-session ={git = "https://github.com/http-rs/async-session.git", rev =  "1d1e718264180aa4af49b5c1b75c8c78897687e7"}
 mongodb = { package = "mongodb", version = "2.3", default-features = false, features = [
   "bson-chrono-0_4",
 ] }
